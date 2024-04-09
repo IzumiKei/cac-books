@@ -19,9 +19,13 @@ body{
 .banner{
     background-color: var(--header-color);
     height: 50px;
+    padding-top: 5px;
     text-align: center;
-    padding-top: 25px;
     border-bottom: 1px black solid;
+}
+
+h1{
+    color: black;
 }
 
 /* --- Menu --- */
@@ -77,7 +81,10 @@ body{
     height: 50px;
 }
 
-/* - Animation - */
+.book-item-cover{
+    transition: height 2s;
+}
+/* - Transition - */
 
 .book-item-cover:hover{
     height: 365px;

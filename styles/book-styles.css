@@ -27,19 +27,20 @@
 .book-data{
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
+    align-content: start;
+    gap: 50px;
 }
 
 .book-author{
     text-align: center;
 }
 
-.show-details-button{
+/* .show-details-button{
     width: 100%;
     background-color: var(--button-bg-color);
     text-decoration: underline;
     text-align: center;
-}
+} */
 
 /* Book Buying */
 
@@ -49,6 +50,13 @@
     margin-top: 50px;
     row-gap: 10px;
     height: fit-content;
+}
+
+#title, #star-rating{
+    font-size:xx-large;
+}
+#synopsis, #author{
+    color: var(--secondary-font-color);
 }
 
 .book-buying > a{
@@ -80,4 +88,8 @@ a > span{
     display: grid;
     grid-template-rows: repeat(3, auto);
     row-gap: 20px;
+}
+
+.data > h3{
+    color: var(--secondary-font-color);
 }

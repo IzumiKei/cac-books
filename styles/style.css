@@ -1,7 +1,7 @@
 :root{
     --header-color: greenyellow;
     --bg-color: black;
-
+    --book-details-bg-color: rgb(0, 54, 0);
 }
 
 *{
@@ -88,4 +88,22 @@ h1{
 
 .book-item-cover:hover{
     height: 365px;
+}
+
+
+
+/* ------------------ Book Details Page Only ------------------- */
+
+.book-detail{
+
+    /* Size and Position */
+    margin: 25px 20px;
+    padding: 20px;
+
+    /* Design */
+    display: flex;
+    background-color: var(--book-details-bg-color);
+    display: flex;
+    gap: 100px;
+
 }

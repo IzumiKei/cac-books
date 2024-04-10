@@ -1,0 +1,69 @@
+main {
+
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+    background-image: url(/img/fondos/biblioteca2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: rgb(77, 116, 62);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+form h2 {
+    font-size: 30px;
+    color: #EDF0F0;
+    margin-bottom: 35px;
+}
+
+input {
+    padding: 17px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid #2d492d;
+    margin-bottom: 30px;
+    outline: none;
+    color: #bae2cf;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: #b8c5b7;
+}
+
+.btn {
+    background-color: #385547;
+    border: 2px solid #468f52;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #507965;
+    border: 2px solid #56ad64;
+}
+
+@media (max-width:991x) {
+    body {
+        padding: 30px;
+    }
+
+    form {
+        width: 340px;
+    }
+}

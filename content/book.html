@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/style.css">
     <!-- Individual Style -->
     <link rel="stylesheet" href="../styles/book-styles.css">
+    <link rel="shortcut icon" href="../img/icon/book-lover-81.ico" type="image/x-icon">
     <title>CAC - Books</title>
 </head>
 <body>
@@ -34,20 +35,73 @@
 
     </header>
     
-    <main class="grid-body">
+    <main>
 
         <section class="book-detail">
 
+            <!-- Book Cover -->
             <div class="book-detail-cover">
-                <img src="/img/covers/brazales-de-duelo.jpeg" alt="book-cover">
+                <img src="../img/covers/brazales-de-duelo.jpeg" alt="book-cover">
             </div>
             
+            <!-- Book Data -->
             <div class="book-data">
-                <h2 class="book-title">Brazales de Duelo</h2>
-                <br>
-                <h3 class="book-sinopsis">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque ex rerum iure blanditiis esse ratione temporibus sed cupiditate corrupti! In enim ex quis. Fugit magni eveniet tempore laborum, necessitatibus labore?</h3>
+                <div class="book-main-data">
+                    <h2 id="title">Brazales de Duelo</h2>
+                    <h4 id="author">Brandon Sanderson</h4>    
+                </div>
+                
+                <div class="book-sinopsis">
+                    <h2>Sinopsis</h2>
+                    <h3 id="synopsis">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque ex rerum iure blanditiis esse ratione temporibus sed cupiditate corrupti! In enim ex quis. Fugit magni eveniet tempore laborum, necessitatibus labore?</h3>    
+                </div>
+
+                <div class="show-details-button">
+                    <h2>Show Details</h2>
+                </div>
+            </div>
+            
+            <!-- Buy Book -->
+            <div class="book-buying">
+                <a href="" class="buy-button">
+                    <span>Buy in Playstore</span>
+                </a>
+                <a href="" class="sample-button">
+                    <span>Read a sample</span>
+                </a>
             </div>
 
+        </section>
+
+        <section class="data-sheet">
+            <div class="sheet-left">
+                <div class="data">
+                    <h2>Autor</h2>
+                    <h3 id="author">Brandon Sanderson</h3>
+                </div>
+                <div class="data">
+                    <h2>Editorial</h2>
+                    <h3 id="publisher">NOVO</h3>
+                </div>
+                <div class="data">
+                    <h2>Publicación</h2>
+                    <h3 id="publication-date">21/07/2017</h3>
+                </div>
+            </div>
+            <div class="sheet-right">
+                <div class="data">
+                    <h2>ISBN</h2>
+                    <h3 id="isbn">9788490697641</h3>
+                </div>
+                <div class="data">
+                    <h2>Páginas</h2>
+                    <h3 id="pages">512</h3>
+                </div>
+                <div class="data">
+                    <h2>Géneros</h2>
+                    <h3 id="genres">Ciencia Ficción, Apocalíptico</h3>
+                </div>
+            </div>
         </section>
 
         <section class="recommendations">

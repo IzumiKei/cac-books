@@ -1,5 +1,8 @@
 :root{
-    --book-details-bg-color: rgb(51, 73, 42);
+    --book-details-bg-color: rgb(50, 55, 50);
+    --book-sheet-data-bg-color: rgb(55, 60, 55);
+    --button-bg-color: rgb(31,31,31);
+    --secondary-font-color: orange;
 }
 
 /* ------------------ Book Details Page Only ------------------- */
@@ -13,7 +16,68 @@
     /* Design */
     display: flex;
     background-color: var(--book-details-bg-color);
-    display: flex;
-    gap: 100px;
+    gap: 20px;
 
+}
+
+.book-cover{
+    box-shadow: 10px white;
+}
+
+.book-data{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.book-author{
+    text-align: center;
+}
+
+.show-details-button{
+    width: 100%;
+    background-color: var(--button-bg-color);
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* Book Buying */
+
+.book-buying{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    margin-top: 50px;
+    row-gap: 10px;
+    height: fit-content;
+}
+
+.book-buying > a{
+    background-color: var(--button-bg-color);
+    padding: 10px 50px;
+    border: 2px white solid;
+    border-radius: 6px;
+    
+
+    text-decoration: none;
+    text-wrap: nowrap;
+}
+
+a > span{
+    color: white;
+}
+
+
+/* Book Data Sheet */
+
+.data-sheet{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: var(--book-sheet-data-bg-color);
+    padding: 20px;
+}
+
+.data-sheet > *{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 20px;
 }

@@ -1,12 +1,13 @@
 :root{
-    --book-details-bg-color: rgb(0, 54, 0);
+    /* Variables CSS */
     --header-color: rgb(146, 206, 122);
     --bg-color: rgb(34, 33, 32);
+    --primary-font-color: rgb(194, 124, 77);
 }
 
 *{
     margin: 0px;
-    color: rgb(194, 124, 77);
+    color: var(--primary-font-color);
     box-sizing: border-box;
 }
 
@@ -92,18 +93,3 @@ h1{
 
 
 
-/* ------------------ Book Details Page Only ------------------- */
-
-.book-detail{
-
-    /* Size and Position */
-    margin: 25px 20px;
-    padding: 20px;
-
-    /* Design */
-    display: flex;
-    background-color: var(--book-details-bg-color);
-    display: flex;
-    gap: 100px;
-
-}

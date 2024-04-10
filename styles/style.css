@@ -1,12 +1,12 @@
 :root{
-    --header-color: greenyellow;
-    --bg-color: black;
     --book-details-bg-color: rgb(0, 54, 0);
+    --header-color: rgb(146, 206, 122);
+    --bg-color: rgb(34, 33, 32);
 }
 
 *{
     margin: 0px;
-    color: white;
+    color: rgb(194, 124, 77);
     box-sizing: border-box;
 }
 
@@ -21,11 +21,11 @@ body{
     height: 50px;
     padding-top: 5px;
     text-align: center;
-    border-bottom: 1px black solid;
+    border-bottom: 1px rgb(0, 0, 0) solid;
 }
 
 h1{
-    color: black;
+    color: rgb(21, 65, 29);
 }
 
 /* --- Menu --- */
@@ -40,7 +40,7 @@ h1{
 }
 
 .menu a{
-    color: black;
+    color: rgb(9, 48, 13);
     text-decoration: none;
     margin: 0px 10px;
 }

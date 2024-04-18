@@ -1,0 +1,33 @@
+/* Estilos para los títulos de la sección */
+.section-title-au{
+    margin: 1% 5%;
+    text-align: left; 
+    color:rgb(196, 196, 211);
+}
+
+/* Estilo para los párrafos dentro del div de about us principal */
+.textoDiv > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color:rgb(194, 124, 77);
+    text-align: justify;
+    margin: 2% auto;
+    max-width: 95vw; 
+}
+
+
+/* Estilo para el contenedor de las sucursales */
+.sucursales {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center; 
+    align-items: flex-start;  
+}
+/* Estilos para lso div dentro de sucursales */
+.sucursales > div {
+    width: 350px;   
+    margin: 10px; 
+    padding: 10px;  
+    background-color: #f0f0f0;
+    text-align: center;  
+}

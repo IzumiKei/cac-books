@@ -8,6 +8,8 @@
     <!-- Individual Style -->
     <link rel="stylesheet" href="../styles/book-styles.css">
     <link rel="shortcut icon" href="../img/icon/book-lover-81.ico" type="image/x-icon">
+    <script src="../js/books-database.js"></script>
+    
     <title>CAC - Books</title>
 </head>
 <body>
@@ -41,9 +43,9 @@
 
             <!-- Book Cover -->
             <div class="book-detail-cover">
-                <img src="../img/covers/brazales-de-duelo.jpeg" alt="book-cover">
+                <img id="cover" src="../img/covers/brazales-de-duelo.jpeg" alt="book-cover">
                 <h3 style="text-align: center;" id="star-rating">
-                    <span>4.8</span> 
+                    <span id="star-rating-number">4.8</span> 
                     <span>⭐</span>
                 </h3>
             </div>
@@ -157,5 +159,6 @@
         </section>
     </main>
 
+    <script src="../js/book-page-manager.js"></script>
 </body>
 </html>

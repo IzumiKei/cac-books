@@ -54,23 +54,26 @@ h1{
 
 /* --- Sections --- */
 .section-title{
-    margin: 50px auto;
+    margin: 50px auto 20px;
     text-align: center;
 }
 
 /* --- Book List --- */
 
 .book-list{
+    background-color: rgb(50, 55, 50);
     /* Size and Position */
-    margin-top: 60px;
     margin-left: 5%;
-    padding-bottom: 10px;
+    padding: 10px;
     width: 90%;
 
     /* Display */
     display: flex;
-    overflow-x: scroll;
     gap: 15px;
+    overflow-x: auto;
+    /* flex-wrap: wrap;
+    justify-content: center; */
+    
     
 }
 
@@ -83,12 +86,13 @@ h1{
 }
 
 .book-item-cover{
-    transition: height 2s;
+    height: 345px;
+    transition: height 0.2s;
 }
 /* - Transition - */
 
 .book-item-cover:hover{
-    height: 365px;
+    height: 356px;
 }
 
 

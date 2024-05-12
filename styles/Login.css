@@ -1,0 +1,128 @@
+main {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    background-image: url(/img/fondos/Login12.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+form {
+    background-color: rgba(73, 161, 70, 0.1);
+    backdrop-filter: blur(3px);
+    border: 2px solid #203a20;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    width: 370px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+form h2 {
+    font-size: 30px;
+    color: #EDF0F0;
+    margin-bottom: 35px;
+    align-items: center;
+}
+
+form p{
+    color: #EDF0F0;
+    text-align: center;
+    font-size: 16px;
+}
+
+form p a{
+    color: #4eaf4e;
+    margin-left: 5px;
+    font-size: 17px;
+}
+
+form p a:hover{
+    color: #a7dfc0;
+}
+
+.btn {
+    background-color: rgba(45, 77, 45, 0.5);
+    border: 2px solid #203a20;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgba(86, 155, 86, 0.5);
+    border: 3px solid #558655;
+}
+
+.grup{
+    position: relative;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 17px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border: 2px solid #203a20;
+    background: transparent;
+    color: #d1ebdf;
+    outline: none;
+}
+
+label{
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    transform: translateY(-30%);
+    color: #d1ebdf;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 1s;
+}
+
+input:focus ~ label, input:not(:placeholder-shown) ~ label{
+    top: -4%;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+.warning {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: rgb(247, 144, 144);
+    padding-top: 10px;
+}
+
+.inicio {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #79e78c;
+    padding-top: 3px;
+}
+
+@media screen and (max-width:991x) {
+    body {
+        width: 100%;
+        padding: 100%;
+    }
+    form {
+        width: 100%;
+    }
+}

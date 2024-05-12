@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,10 @@
     <link rel="stylesheet" href="../styles/style.css">
     <!-- Individual Style -->
     <link rel="stylesheet" href="../styles/registrarse.css">
+    <!-- registro js -->
+    <script src="/js/registrarse.js"></script>
 </head>
+
 <body>
     <header>
         <div class="banner">
@@ -21,30 +25,38 @@
                 <a href="../index.html#section-literature">Literatura</a>
                 <a href="../index.html#section-education">Educación</a>
             </div>
-            
+
             <div class="profile-menu">
                 <a href="./about.html">Sobre Nosotros</a>
             </div>
-            
+
         </div>
 
     </header>
 
     <main>
-        <form>
-            <h2>Registrese</h2>
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellido">
-            <input type="email" placeholder="Correo">
-            <input type="password" placeholder="Contraseña">
-            <input type="password" placeholder="Confirmar Contraseña">
-            <input type="submit" class="btn" value="Enviar">
+        <div id="form">
+            <form onsubmit="return registrarse();">
+                <h2>Registrese</h2>
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="apellido" placeholder="Apellido">
+                <input type="email" id="email" placeholder="Correo">
+                <input type="password" id="contra" placeholder="Contraseña">
+                <input type="password" id="contra2" placeholder="Confirmar Contraseña">
+                <input type="submit" class="btn" value="Enviar">
+                <p>¿Ya tienes una cuenta? <a href="/content/Login.html">iniciar sesión</a></p>
 
-        </form>
+                <p class="warning" id="warning"></p>
+                <p class="registrado" id="registrado"></p>
+            </form>
+        </div>
+
     </main>
 
     <footer>
 
     </footer>
+
 </body>
+
 </html>

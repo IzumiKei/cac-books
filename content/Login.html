@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC - Books</title>
+    <!-- General Style -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- Individual Style -->
+    <link rel="stylesheet" href="/styles/Login.css">
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <h1>CAC - Books</h1>
+        </div>
+        <div class="menu">
+
+            <div class="book-menu">
+                <a href="../index.html#section-news">Novedades</a>
+                <a href="../index.html#section-literature">Literatura</a>
+                <a href="../index.html#section-education">Educación</a>
+            </div>
+
+            <div class="profile-menu">
+                <a href="./about.html">Sobre Nosotros</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        <form onsubmit="return Login();" id="form">
+            <div id="form">
+                <h2>Iniciar Sesión</h2>
+                <div class="grupo">
+                    <div class="grup">
+                        <input type="email" id="email" placeholder=" ">
+                        <label for="">Email</label>
+                    </div>
+                    <div class="grup">
+                        <input type="password" id="contra" placeholder=" ">
+                        <label for="">Contraseña</label>
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Iniciar Sesión">
+                <p>¿Aún no tiene una cuenta? <a href="/content/registrarse.html">Registrese</a></p>
+
+                <p class="warning" id="warning"></p>
+                <p class="inicio" id="inicio"></p>
+            </div>
+        </form>
+    </main>
+
+    <script src="/js/Login.js"></script>
+</body>
+
+</html>

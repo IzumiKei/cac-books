@@ -1,0 +1,50 @@
+:root{
+    --secondary-bs-color: rgb(50, 55, 50);
+    --buttons-bg-color: rgb(146, 206, 122);
+    --buttons-font-color: rgb(255, 255, 255);
+    --buttons-border-color: white;
+}
+
+.books-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    margin: 25px;
+    padding: 20px 0px;
+    background-color: var(--secondary-bs-color);
+}
+
+#page-buttons-container{
+    margin: 10px 0px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.page-button{
+    background-color: var(--buttons-bg-color);
+    color: rgb(0, 0, 0);
+}
+
+#page-button-left{
+    border-radius: 10px 0px 0px 10px;
+    border: 2px var(--buttons-border-color) solid;
+    border-right: 0px;
+}
+
+#page-button-right{
+    border-radius: 0px 10px 10px 0px;
+    border: 2px var(--buttons-border-color) solid;
+    border-left: 0px;
+}
+#page-counter{
+    background-color: var(--secondary-bs-color);
+    width: 40px;
+    border: 2px var(--buttons-border-color) solid;
+    text-align: center;
+}
+
+.book-item-cover:hover{
+    height: 345px;
+    border: 2px var(--buttons-bg-color) solid;
+}

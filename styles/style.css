@@ -1,6 +1,8 @@
 :root{
     /* Variables CSS */
     --header-color: rgb(146, 206, 122);
+    --form-button-color: rgb(175, 235, 126);
+    --form-color: rgb(104, 141, 89);
     --bg-color: rgb(34, 33, 32);
     --primary-font-color: rgb(194, 124, 77);
 }
@@ -25,11 +27,13 @@ body{
     border-bottom: 1px rgb(0, 0, 0) solid;
 }
 
-h1{
+h1 > a{
     color: rgb(21, 65, 29);
+    text-decoration: none;
 }
 
 /* --- Menu --- */
+
 .menu{
     background-color: var(--header-color);
     display: flex;
@@ -40,6 +44,7 @@ h1{
     display: inline;
 }
 
+
 .menu a{
     color: rgb(9, 48, 13);
     text-decoration: none;
@@ -48,6 +53,44 @@ h1{
 
 .book-menu, .profile-menu{
     margin: 10px 20px;
+}
+
+#search{
+    background-color: var(--form-color);
+    border-color: var(--bg-color);
+    color: rgb(255, 255, 255);
+}
+
+#search-button{
+    background-color: var(--form-button-color);
+    color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 560px){
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .menu div{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .book-menu, .profile-menu{
+        padding: 10px 0px;
+        margin: 10px 0px;
+    }
+    .profile-menu{
+        border-bottom: 1px black solid;
+    }
+    #search-form{
+        width: 90%;
+    }
+    #search{
+        width: 80%;
+    }
 }
 
 /* -------- Main -------- */
@@ -62,6 +105,7 @@ h1{
 
 .book-list{
     background-color: rgb(50, 55, 50);
+    height: 390px;
     /* Size and Position */
     margin-left: 5%;
     padding: 10px;
@@ -71,9 +115,7 @@ h1{
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    /* flex-wrap: wrap;
-    justify-content: center; */
-    
+    scrollbar-color: rgb(0, 0, 0) var(--header-color);
     
 }
 
@@ -87,6 +129,8 @@ h1{
 
 .book-item-cover{
     height: 345px;
+    max-width: 280px;
+    overflow: hidden;
     transition: height 0.2s;
 }
 /* - Transition - */

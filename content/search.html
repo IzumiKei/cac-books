@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>CAC - Books</title>
-    <link rel="shortcut icon" href="img/icon/book-lover-81.ico" type="image/x-icon">
-
+    <title>Buscar</title>
+    <link rel="shortcut icon" href="/img/icon/book-lover-81.ico" type="image/x-icon">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./js/books-api-library.js"></script>
-
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/search-styles.css">
+    <!-- Libraries -->
+    <script src="../js/books-api-library.js"></script>
 </head>
 <body>
     <header>
@@ -41,41 +42,20 @@
 
     </header>
 
-    <main>
-        <section id="section-fiction">
-            <!-- Sección de Literatura -->
-             <h2 class="section-title">Ficción</h2>
-
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
-        </section>
-
-        <section id="section-computers">
-            <!-- Sección de Educación -->
-            <h2 class="section-title">Computadoras</h2>
-
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
-        </section>
-
-        <section id="section-management">
-            <!-- Sección de Novedades -->
-            <h2 class="section-title">Liderazgo</h2>
- 
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
+    <main> 
+        <section class="books-section">
 
         </section>
-        
+
+        <div id="page-buttons-container">
+            <button class="page-button" id="page-button-left" onclick="advancePage(-1)">Anterior</button>
+            <div id="page-counter">
+                <h4 id="page-counter-text">1</h4>
+            </div>
+            <button class="page-button" id="page-button-right" onclick="advancePage(1)">Siguiente</button>
+        </div>
     </main>
+    <script src="../js/search.js"></script>
 
-    <footer>
-
-    </footer>
-    
-    <script src="./js/index.js"></script>
 </body>
 </html>

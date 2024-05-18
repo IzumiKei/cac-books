@@ -50,12 +50,23 @@
 #synopsis, #author{
     color: var(--secondary-font-color);
 }
+.book-synopsis{
+    height: 320px;
+    overflow: hidden;
+}
 
 #synopsis *{
     /* Se agrega esta línea porque algunas descripciones tienen código html que reaccionan a los estilos. */
     color: var(--secondary-font-color);
+
 } 
 
+#synopsis-button{
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0.301);
+    width: 100%;
+    height: 40px;
+}
 .book-buying > a{
     background-color: var(--header-color);
     padding: 10px 20px;
@@ -71,6 +82,18 @@ a > span{
 }
 
 
+@media screen and (max-width: 504px){
+    .book-detail{
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+    }
+    .book-detail > div{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
 /* Book Data Sheet */
 
 .data-sheet{
@@ -88,4 +111,9 @@ a > span{
 
 .data > h3{
     color: var(--secondary-font-color);
+}
+
+
+.book-list{
+    margin-bottom: 40px;
 }

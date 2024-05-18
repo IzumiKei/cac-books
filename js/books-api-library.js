@@ -7,19 +7,10 @@ let coversFolderURL = "../img/covers/"
 let volumesURL = "https://www.googleapis.com/books/v1/volumes"
 
 
-// Añade a todos los elementos de la clase book-item la función que almacena su id cuando se clickea.
-function initListeners(sectionObject = document){
-    let bookItems = sectionObject.getElementsByClassName("book-item")
-    for (i = 0; i < bookItems.length; i++){
-        bookItems[i].addEventListener("click", function(){localStorage.setItem("selectedBookID", this.id)}, true)
-    }
-}
-
-
 function createBookItem(id, title){
     let bookItem = `
     <div class="book-item" id="${id}">
-        <a href="/content/book.html">
+        <a href="/content/book.html?id=${id}">
             <img class="book-item-cover" src="https://books.google.com/books/publisher/content/images/frontcover/${id}?fife=w480-h690" alt="${title}">
         </a>
     </div>`
@@ -34,7 +25,6 @@ function createBookList(sectionElement, data, limit = 5){
     for (i = 0; i < limit; i++){
         bookList.innerHTML += createBookItem(items[i].id, items[i].volumeInfo.title)
     } 
-    initListeners(bookList)
 }
 
 // Devuelve un JSON con el volumen correspondiente a este ISBN.
@@ -48,64 +38,18 @@ function fetchVolumeById(id){
 }
 
 // Devuelve un JSON con una lista de volumenes pertenecientes a dado género.
-function fetchVolumesBySubject(subject, limit = 10){
-    console.log(volumesURL + "?q=subject:" + subject + "&maxResults=" + limit + "&filter=paid-ebooks&langRestrict=es&orderBy=newest")
-    return fetch(volumesURL + "?q=subject:" + subject + "&maxResults=" + limit + "&filter=paid-ebooks&langRestrict=es&orderBy=newest")
+function fetchVolumesBySubject(subject, orderBy = "newest",limit = 10){
+    let formatedSubject = subject.replaceAll(" & ", "+").replaceAll(" / ", "/").replaceAll(" ", "+")
+    return fetch(volumesURL + '?q=subject:"' + formatedSubject + '"&maxResults=' + limit + "&filter=ebooks&langRestrict=es&orderBy=" + orderBy)
 }
 
-
-// Les da la función click a los objetos 
-function updateBookPageData(bookObject){
-    // Se usa para crear un string con todos los elementos del array "genre".
-    let selectedBookGenres = ""
-    // Referencia a las etiquetas html
-        // Data: Información principal
-    let title = document.querySelector("#title") // ID
-    let authorMD = document.querySelector("#author-md")
-    let cover = document.querySelector("#cover")
-    let starRating = document.querySelector("#star-rating-number")
-    let synopsis = document.querySelector("#synopsis")
-        // Data: Columna izquierda
-    let authorLC = document.querySelector("#author-lc")
-    let publisher = document.querySelector("#publisher")
-    let publicationDate = document.querySelector("#publication-date")
-        // Data: Columna derecha
-    let isbn = document.querySelector("#isbn")
-    let pages= document.querySelector("#pages")
-    let genre = document.querySelector("#genres")
-        // Botones
-    let buyButton = document.querySelector(".buy-button") // Class
-    let sampleButton = document.querySelector(".sample-button")
-
-    // Actualización de la página.
-        // Información principal
-    title.innerHTML = bookObject.title
-    authorMD.innerHTML = bookObject.author
-    cover.setAttribute("src", coversFolderURL + bookObject.cover)
-    starRating.innerHTML = bookObject.stars
-    synopsis.innerHTML = bookObject.synopsis
-        // Columna izquierda
-    authorLC.innerHTML = bookObject.author
-    publisher.innerHTML = bookObject.publisher
-    publicationDate.innerHTML = bookObject.publicationDate
-        // Columna derecha
-    isbn.innerHTML = bookObject.isbn
-    pages.innerHTML = bookObject.pagesAmount
-        // Código para convertir los elementos de un array en un solo string separado por coma.
-    selectedBookGenres = ""
-    for (i = 0; i < bookObject.genre.length; i++){
-        selectedBookGenres += bookObject.genre[i]
-        // Separa por coma todos los items excepto el último, para que no quede una coma adicional.
-        if (i != bookObject.genre.length - 1){
-            selectedBookGenres += ", "
-        }
-    }
-    genre.innerHTML = selectedBookGenres
-        // Botones
-    buyButton.setAttribute("href", bookObject.buyLink)
-    sampleButton.setAttribute("href", bookObject.sampleLink)
+// Devuelve un json con una lista de volumenes basado en una querie.
+function fetchVolumesByQuerie(q = " ", startIndex){
+    console.log(volumesURL + "?q=" + q + "&filter=ebooks&langRestrict=es&maxResults=20" + "&startIndex=" + startIndex)
+    return fetch(volumesURL + "?q=" + q + "&filter=ebooks&langRestrict=es&maxResults=20" + "&startIndex=" + startIndex)
 }
 
+// Usado para cargar la información en la book page.
 function loadBookDataFromAPI(volumeData){
     console.log("Loaded Data:")
     console.log(volumeData)
@@ -194,7 +138,6 @@ function loadBookDataFromAPI(volumeData){
     
         // Botones
     buyButton.setAttribute("href", info.canonicalVolumeLink)
-    sampleButton.setAttribute("href", bookObject.sampleLink)
 }
 
 

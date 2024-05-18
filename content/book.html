@@ -16,27 +16,32 @@
 
 </head>
 <body>
-
     <header>
-
+        
         <div class="banner">
-            <h1>CAC - Books</h1>
+            <!-- Banner -->
+            <h1><a href="/index.html">CAC - Books</a></h1>
         </div>
 
-        <div class="menu">
+        <nav>
+            <!-- Menu -->
+            <div class="menu">
 
-            <div class="book-menu">
-                <a href="../index.html#section-news">Novedades</a>
-                <a href="../index.html#section-literature">Literatura</a>
-                <a href="../index.html#section-education">Educación</a>
+                <div class="book-menu">
+                    <form action="/content/search.html" action="GET" id="search-form">
+                        <input type="search" id="search" name="search">
+                        <input type="hidden" id="page-input" name="page" value="1">
+                        <input type="submit" id="search-button" value="Buscar">
+                    </form>
+                </div>
+                
+                <div class="profile-menu">
+                    <a href="/content/registrarse.html">Registrate</a>
+                    <a href="/content/about.html">Sobre Nosotros</a>
+                </div>
+                
             </div>
-            
-            <div class="profile-menu">
-                <a href="./registrarse.html">Registrate</a>
-                <a href="./about.html">Sobre Nosotros</a>
-            </div>
-            
-        </div>
+        </nav>
 
     </header>
     
@@ -46,7 +51,7 @@
 
             <!-- Book Cover -->
             <div class="book-detail-cover">
-                <img id="cover" src="../img/covers/brazales-de-duelo.jpeg" alt="book-cover">
+                <img id="cover" src="" alt="book-cover">
                 <!-- Buy Book -->
                 <div class="book-buying">
                     <a href="" class="buy-button">
@@ -70,8 +75,9 @@
                 
                 <div class="book-synopsis">
                     <h2>Descripción</h2>
-                    <h3 id="synopsis">There is no description available for this book.</h3>    
+                    <h3 id="synopsis">There is no description available for this book.</h3>
                 </div>
+                <button id="synopsis-button" onclick="changeSynopsisDisplayState()">Mostrar más</button>  
 
             </div>
 

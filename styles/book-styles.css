@@ -1,9 +1,9 @@
 :root{
-    --book-details-bg-color: rgb(50, 55, 50);
-    --book-sheet-data-bg-color: rgb(55, 60, 55);
-    --header-color: rgb(146, 206, 122);
-    --button-bg-color: rgb(31,31,31);
-    --secondary-font-color: rgb(241, 230, 212);
+    --book-details-bg-color: #262626;
+    --book-sheet-data-bg-color: #262626;
+    --button-bg-color: #174031;
+    --transparent-button-bg: #17403163;
+    --secondary-font-color: #2c7659;
 }
 
 /* ------------------ Book Details Page Only ------------------- */
@@ -20,15 +20,10 @@
 
 }
 
-.book-cover{
-    box-shadow: 10px white;
-}
-
 .book-data{
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    gap: 50px;
 }
 
 .book-author{
@@ -51,34 +46,31 @@
     color: var(--secondary-font-color);
 }
 .book-synopsis{
+    justify-self: start;
     height: 320px;
     overflow: hidden;
+    margin-top: 40px;
 }
 
 #synopsis *{
     /* Se agrega esta línea porque algunas descripciones tienen código html que reaccionan a los estilos. */
     color: var(--secondary-font-color);
-
 } 
 
 #synopsis-button{
     border: 0px;
-    background-color: rgba(0, 0, 0, 0.301);
+    background-color: var(--transparent-button-bg);
     width: 100%;
     height: 40px;
 }
 .book-buying > a{
-    background-color: var(--header-color);
+    background-color: var(--button-bg-color);
     padding: 10px 20px;
     border-radius: 10px;
     
 
     text-decoration: none;
     text-wrap: nowrap;
-}
-
-a > span{
-    color: var(--bg-color);
 }
 
 
@@ -88,6 +80,7 @@ a > span{
         justify-content: center;
         flex-flow: column wrap;
     }
+    
     .book-detail > div{
         display: flex;
         justify-content: center;

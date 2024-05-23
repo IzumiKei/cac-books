@@ -1,10 +1,17 @@
 :root{
     /* Variables CSS */
-    --header-color: rgb(146, 206, 122);
+    --header-color: #2c7659;
+    --form-button-color: #2c7659;
+    --form-color: #174031;
+    --bg-color: #0d0d0d;
+    --secondary-bg-color: #262626;
+    --primary-font-color: #f2f2f2;
+
+    /* --header-color: rgb(146, 206, 122);
     --form-button-color: rgb(175, 235, 126);
     --form-color: rgb(104, 141, 89);
     --bg-color: rgb(34, 33, 32);
-    --primary-font-color: rgb(194, 124, 77);
+    --primary-font-color: rgb(194, 124, 77); */
 }
 
 *{
@@ -28,7 +35,6 @@ body{
 }
 
 h1 > a{
-    color: rgb(21, 65, 29);
     text-decoration: none;
 }
 
@@ -40,15 +46,14 @@ h1 > a{
     justify-content: space-between;
 }
 
-.menu div{
-    display: inline;
-}
-
-
 .menu a{
-    color: rgb(9, 48, 13);
+    color: var(--primary-font-color);
     text-decoration: none;
     margin: 0px 10px;
+}
+
+.menu a:hover{
+    text-decoration: underline;
 }
 
 .book-menu, .profile-menu{
@@ -58,12 +63,15 @@ h1 > a{
 #search{
     background-color: var(--form-color);
     border-color: var(--bg-color);
-    color: rgb(255, 255, 255);
+    border-radius: 20px 0px 0px 20px;
 }
 
 #search-button{
     background-color: var(--form-button-color);
-    color: rgb(0, 0, 0);
+    color: var(--primary-font-color);
+    margin-left: -3px;
+    padding: 0px, 5px;
+    border-radius: 0px 20px 20px 0px;
 }
 
 @media screen and (max-width: 560px){
@@ -104,7 +112,7 @@ h1 > a{
 /* --- Book List --- */
 
 .book-list{
-    background-color: rgb(50, 55, 50);
+    background-color: var(--secondary-bg-color);
     height: 390px;
     /* Size and Position */
     margin-left: 5%;
@@ -115,7 +123,7 @@ h1 > a{
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    scrollbar-color: rgb(0, 0, 0) var(--header-color);
+    scrollbar-color: var(--primary-font-color) var(--header-color);
     
 }
 

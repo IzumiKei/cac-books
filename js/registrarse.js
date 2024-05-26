@@ -8,6 +8,7 @@ function registrarse() {
     const parrafo = document.getElementById("warning");
     const enviado = document.getElementById("registrado");
     const terminos = document.querySelector('label input:checked');
+    var seleccion = document.getElementById('opcion');
    
     form.addEventListener("submit", e=>{
         e.preventDefault();
@@ -36,6 +37,10 @@ function registrarse() {
         if(contra2.value !== contra.value){
             warning += `La contraseña no coincide <br>`
             error = true;
+        }
+        if(seleccion.value==0 || seleccion.value==""){
+            warning += `Debe seleccionar una opción <br>`
+            error=true;
         }
         if(terminos<1){
             warning += `Debe aceptar los Términos y Condiciones <br>`

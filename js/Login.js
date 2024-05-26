@@ -8,6 +8,7 @@ form.addEventListener("submit", e => {
     e.preventDefault();
     let warning = "";
     let error = false;
+    // El texto siguiente valida el formato de un email.
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     errores.innerHTML = "";
     inicio.innerHTML = "";

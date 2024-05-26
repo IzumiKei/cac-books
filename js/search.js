@@ -1,6 +1,7 @@
 let booksSection = document.getElementsByClassName("books-section")[0]
 
 let rawData = window.location.search
+//querie ?search=Hora&page=1
 let parsedData = new URLSearchParams(rawData)
 let startIndex = parsedData.get("page")*20 - 20
 

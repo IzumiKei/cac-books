@@ -7,6 +7,7 @@ let coversFolderURL = "../img/covers/"
 let volumesURL = "https://www.googleapis.com/books/v1/volumes"
 
 
+// Crea un BookItem
 function createBookItem(id, title){
     let bookItem = `
     <div class="book-item" id="${id}">
@@ -18,7 +19,7 @@ function createBookItem(id, title){
     return bookItem
 }
 
-
+// Crea un BookList
 function createBookList(sectionElement, data, limit = 5){
     let items = data.items;
     let bookList = sectionElement.getElementsByClassName("book-list")[0]
@@ -70,7 +71,6 @@ function loadBookDataFromAPI(volumeData){
     let genre = document.querySelector("#genres")
         // Botones
     let buyButton = document.querySelector(".buy-button") // Class
-    let sampleButton = document.querySelector(".sample-button")
 
     // Actualización de la página.
         
@@ -140,5 +140,7 @@ function loadBookDataFromAPI(volumeData){
     buyButton.setAttribute("href", info.canonicalVolumeLink)
 }
 
+// Panda (Base de datos), Matplotlib (Graficar); 
+// scikit-learn (Modelos de ciencia de datos); keras (Redes neuronales)
 
 

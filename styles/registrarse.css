@@ -96,6 +96,14 @@ input {
     border: 2px solid #56ad64;
 }
 
+label span{
+    color: #8bca86;
+}
+
+label input:checked + span{
+    color: #EDF0F0;
+}
+
 @media screen and (max-width:991px) {
     body{
         width: 100%;

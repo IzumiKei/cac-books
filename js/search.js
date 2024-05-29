@@ -3,7 +3,7 @@ let booksSection = document.getElementsByClassName("books-section")[0]
 let rawData = window.location.search
 //querie ?search=Hora&page=1
 let parsedData = new URLSearchParams(rawData)
-let startIndex = parsedData.get("page")*20 - 20
+let startIndex = parsedData.get("page")*20 - 20  // 1 * 20 - 20 = 0, 2 * 40 - 20 = 20 
 
 
 function initPageButtons(totalResults){
@@ -18,7 +18,7 @@ function initPageButtons(totalResults){
     }
 }
 
-
+// Llama al search cambiando 
 function advancePage(pageIndexModifier){
     let searchPageURL = "/content/search.html"
     let newPageNum = parseInt(parsedData.get("page")) + pageIndexModifier
@@ -26,6 +26,7 @@ function advancePage(pageIndexModifier){
     
     window.location = searchPageURL + urlData
 }
+
 
 fetchVolumesByQuerie(parsedData.get("search"), startIndex)
     .then(response => response.json())

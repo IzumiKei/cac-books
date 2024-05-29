@@ -1,5 +1,6 @@
 
 let sectionRecommendations = document.querySelector("#section-recommendations")
+
 let rawData = window.location.search
 let parsedData = new URLSearchParams(rawData)
 
@@ -17,15 +18,16 @@ function changeSynopsisDisplayState(){
         bookSynopsis.style.height = "auto";
         synopsisButton.innerText = "Mostrar menos"
     }
+
     isFullSynopsisDisplayed = ! isFullSynopsisDisplayed
+
 }
+
 // ---- Fetchs ----
 
 fetchVolumeById(parsedData.get("id"))
             .then(response => response.json())
             .then(data => {
-                
-                
                 
                 loadBookDataFromAPI(data)
                 

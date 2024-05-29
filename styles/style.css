@@ -161,14 +161,13 @@ footer {
     justify-content: space-between;
 }
 
-footer a {
-    color: #080000;
-    text-decoration: none;
-    margin-bottom: 10px;
-    margin: 10px 10px;
-    font-size: large;
-    font-weight: bold;
-}
+footer a{
+        color: var(--primary-font-color);
+        text-decoration: none;
+        margin: 0px 10px;
+    }
+    
+    
 footer a:hover {
     text-decoration: underline;
 }

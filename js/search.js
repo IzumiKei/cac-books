@@ -1,10 +1,23 @@
+import {cacHeader, cacFooter} from "./Components/CacNavigation.js"
+import { SearchApp } from "./Components/SearchApp.js"
+import {fetchVolumesByQuerie} from "./books-api-library.js"
+
 let booksSection = document.getElementsByClassName("books-section")[0]
 
 let rawData = window.location.search
-//querie ?search=Hora&page=1
 let parsedData = new URLSearchParams(rawData)
 let startIndex = parsedData.get("page")*20 - 20  // 1 * 20 - 20 = 0, 2 * 40 - 20 = 20 
 
+const {createApp} = Vue;
+
+
+createApp({
+    components: {
+        "navegacion": cacHeader,
+        "pie": cacFooter,
+        "search-app": SearchApp
+    }
+}).mount("#app")
 
 function initPageButtons(totalResults){
     document.getElementById("page-counter-text").innerText = parsedData.get("page")
@@ -18,7 +31,7 @@ function initPageButtons(totalResults){
     }
 }
 
-// Llama al search cambiando 
+// Llama al search cambiando la URL
 function advancePage(pageIndexModifier){
     let searchPageURL = "/content/search.html"
     let newPageNum = parseInt(parsedData.get("page")) + pageIndexModifier
@@ -27,18 +40,16 @@ function advancePage(pageIndexModifier){
     window.location = searchPageURL + urlData
 }
 
-
+/*
 fetchVolumesByQuerie(parsedData.get("search"), startIndex)
     .then(response => response.json())
     .then(data => {
         console.log(data)
         console.log(data.items.length)
-        for (i = 0; i < data.items.length; i++){
+        for (let i = 0; i < data.items.length; i++){
             booksSection.innerHTML += createBookItem(data.items[i].id, data.items[i].volumeInfo.title)
         }
         
         initPageButtons(data.totalItems)
     })
-
-
-
+*/

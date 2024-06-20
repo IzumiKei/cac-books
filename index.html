@@ -2,94 +2,26 @@
 <html lang="es">
 <head>
     <title>CAC - Books</title>
-    <link rel="shortcut icon" href="/img/logos/books.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logos/books.png" type="image/x-icon">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="./js/books-api-library.js"></script>
 
 </head>
 <body>
-    <header>
-        
-        <div class="banner">
-            <!-- Banner -->
-            <h1><a href="/index.html">CAC - Books</a></h1>
-        </div>
-
-        <nav>
-            <!-- Menu -->
-            <div class="menu">
-
-                <div class="book-menu">
-                    <form action="/content/search.html" id="search-form">
-                        <input type="search" id="search" name="search" required>
-                        <input type="hidden" id="page-input" name="page" value="1">
-                        <input type="submit" id="search-button" value="Buscar">
-                    </form>
-                </div>
-                
-                <div class="profile-menu">
-                    <a href="/content/Login.html">Iniciar Sesión</a>
-                    <a href="/content/about.html">Sobre Nosotros</a>
-                </div>
-                
-            </div>
-        </nav>
-
-    </header>
-
-    <main>
-        <section id="section-fiction">
-            <!-- Sección de Literatura -->
-             <h2 class="section-title">Ficción</h2>
-
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
-        </section>
-
-        <section id="section-computers">
-            <!-- Sección de Educación -->
-            <h2 class="section-title">Computadoras</h2>
-
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
-        </section>
-
-        <section id="section-management">
-            <!-- Sección de Novedades -->
-            <h2 class="section-title">Liderazgo</h2>
- 
-            <div class="book-list">
-                <!-- Lista de libros -->
-            </div>
-
-        </section>
-        
-    </main>
-
-    <footer>
-        <nav>
-            <div class="footer-menu">
-                <div class="footer-link" style="text-align: end;">
-                    <a href="./terminosycondiciones.html">Términos y condiciones</a>
-                    <a href="./mision-vision.html">Valores Institucionales </a>
-                </div>
-                <div class="footer-wp">
-                    <a id="whatsapp-link" href="https://wa.me/3764270900" target="_blank">
-                        <span>Contáctenos</span>
-                        <!-- <i class="fab fa-whatsapp" style="font-size: 30px; color: #25D366; margin-bottom: -10px;"></i> -->
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </footer>
     
-    <script src="./js/index.js"></script>
+    <div id="app">
+        <navegacion :user-data="userData"></navegacion>
+        
+        <index-app first-topic="fiction" second-topic="computers" third-topic="leadership"></index-app>
+
+        <pie></pie>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

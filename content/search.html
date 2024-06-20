@@ -9,52 +9,21 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/search-styles.css">
-    <!-- Libraries -->
-    <script src="../js/books-api-library.js"></script>
 </head>
 <body>
-    <header>
+    
+    <div id="app">
+        <navegacion></navegacion>
         
-        <div class="banner">
-            <!-- Banner -->
-            <h1><a href="/index.html">CAC - Books</a></h1>
-        </div>
+        <search-app></search-app>
 
-        <nav>
-            <!-- Menu -->
-            <div class="menu">
+        <pie></pie>
+    </div>
 
-                <div class="book-menu">
-                    <form action="/content/search.html" id="search-form">
-                        <input type="search" id="search" name="search">
-                        <input type="hidden" id="page-input" name="page" value="1">
-                        <input type="submit" id="search-button" value="Buscar">
-                    </form>
-                </div>
-                
-                <div class="profile-menu">
-                    <a href="/content/Login.html">Iniciar Sesión</a>
-                    <a href="/content/about.html">Sobre Nosotros</a>
-                </div>
-                
-            </div>
-        </nav>
+    
 
-    </header>
-
-    <main> 
-        <div class="books-section">
-        </div>
-
-        <div id="page-buttons-container">
-            <button class="page-button" id="page-button-left" onclick="advancePage(-1)">Anterior</button>
-            <div id="page-counter">
-                <h4 id="page-counter-text">1</h4>
-            </div>
-            <button class="page-button" id="page-button-right" onclick="advancePage(1)">Siguiente</button>
-        </div>
-    </main>
-    <script src="../js/search.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="../js/search.js"></script>
 
 </body>
 </html>

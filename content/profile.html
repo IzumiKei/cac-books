@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Perfil</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/profile-style.css">
+
+    <link rel="shortcut icon" href="../img/logos/books.png" type="image/x-icon">
+</head>
+<body>
+    
+    <main id="app">
+        <navegacion></navegacion>
+
+        <section id="profile-section">
+            <aside id="profile-navigation">
+                <img id="profile-picture" src="../img/profiles/perrito.jpg" alt="profile">
+                <button class="profile-button" v-bind:class="sections[0].isSelected" type="button" @click="selectSection(0)">Favoritos</button>
+                <button class="profile-button" v-bind:class="sections[1].isSelected" type="button" @click="selectSection(1)">Carritos</button>
+                <button class="profile-button" v-bind:class="sections[2].isSelected" type="button" @click="logOut()">Cerrar Session</button>
+            </aside>
+        </section>
+        
+    </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="../js/profileApp.js"></script>
+</body>
+</html>

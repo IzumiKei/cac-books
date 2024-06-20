@@ -1,36 +1,43 @@
 
+import {cacHeader, cacFooter} from "./Components/CacNavigation.js";
+import {BookList, BookItem } from "./Components/BookList.js";
 
-// ---- Variables ----
-let sectionComputers = document.querySelector("#section-computers")
-let sectionManagement = document.querySelector("#section-management")
-let sectionfiction = document.querySelector("#section-fiction")
-
+const {createApp} = Vue;
 
 
+const IndexApp = {
+    props: ["firstTopic", "secondTopic", "thirdTopic"],
+    components:{
+        "book-list": BookList
+    },
+    template: `
+        <book-list section-title="Ficción" :section-topic="firstTopic"/>
+        <book-list section-title="Informática" :section-topic="secondTopic"/>
+        <book-list section-title="Liderazgo" :section-topic="thirdTopic"/>`
+    
+}
 
-// ---- Fetchs ----
+// Vue
+createApp({
+    components: {
+        "navegacion": cacHeader,
+        "pie": cacFooter,
+        "index-app": IndexApp
+    },
+    data(){
+        return {
+            userIsLogged: localStorage.getItem("isLogged"),
+            userData: {}
+        }
+    },
+    methods: {
+        checkLogInStatus(){
+            if (localStorage.getItem("isLogged")){
+                alert("Logged as user " + localStorage.getItem("userId"));
+            }
+        }
+    }
+}).mount("#app")
 
-fetchVolumesBySubject("computers")
-    .then(responce => responce.json())
-    .then(data => {
-        console.log("Computers data")
-        console.log(data)
-        createBookList(sectionComputers, data)
-    })
 
-fetchVolumesBySubject("leadership")
-    .then(responce => responce.json())
-    .then(data => {
-        console.log("Leadership data")
-        console.log(data)
-        createBookList(sectionManagement, data)
-    })
-
-fetchVolumesBySubject("fiction")
-    .then(responce => responce.json())
-    .then(data => {
-        console.log("Fiction data")
-        console.log(data)
-        createBookList(sectionfiction, data)
-    })
 

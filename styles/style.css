@@ -7,12 +7,12 @@
     --secondary-bg-color: #262626;
     --primary-font-color: #f2f2f2;
 
-    /* --header-color: rgb(146, 206, 122);
-    --form-button-color: rgb(175, 235, 126);
-    --form-color: rgb(104, 141, 89);
-    --bg-color: rgb(34, 33, 32);
-    --primary-font-color: rgb(194, 124, 77); */
 }
+
+html, body, #app{
+    height: 100%;
+}
+
 
 *{
     margin: 0px;
@@ -34,16 +34,15 @@ body{
     border-bottom: 1px rgb(0, 0, 0) solid;
 }
 
-h1 > a{
-    text-decoration: none;
-}
-
 /* --- Menu --- */
 
 .menu{
+    height: 64px;
     background-color: var(--header-color);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 180px auto 256px;
+    align-items: center;
+    column-gap: 4px;
 }
 
 .menu a{
@@ -52,24 +51,33 @@ h1 > a{
     margin: 0px 10px;
 }
 
+.menu > h1, #profile-menu{
+    justify-self: center;
+}
 .menu a:hover{
     text-decoration: underline;
 }
 
-.book-menu, .profile-menu{
-    margin: 10px 20px;
+.book-menu{
+    display: grid;
+    grid-template-columns: auto 64px;
 }
+
+.profile-menu{
+    justify-self: center;
+}
+
 
 #search{
     background-color: var(--form-color);
     border-color: var(--bg-color);
     border-radius: 20px 0px 0px 20px;
+    flex: 1;
 }
 
 #search-button{
     background-color: var(--form-button-color);
     color: var(--primary-font-color);
-    margin-left: -3px;
     padding: 0px, 5px;
     border-radius: 0px 20px 20px 0px;
 }
